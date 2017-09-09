@@ -1,9 +1,6 @@
 FROM debian:stretch-slim
 MAINTAINER Italo Maia <italo.maia@gmail.com>
 
-ARG TORCH_LUA_VERSION
-ENV TORCH_LUA_VERSION ${TORCH_LUA_VERSION}
-
 RUN apt-get update -y &&\
     apt-get install -y\
     software-properties-common\
@@ -32,8 +29,9 @@ RUN apt-get update -y &&\
     ipython3\
     libgfortran-6-dev
 
-RUN git clone https://github.com/torch/distro.git /root/torch --recursive\
-    && cd /root/torch\
-    && ./install.sh
+RUN git clone https://github.com/torch/distro.git /root/torch --recursive
 
+ARG TORCH_LUA_VERSION
+ENV TORCH_LUA_VERSION ${TORCH_LUA_VERSION}
+RUN cd /root/torch && ./install.sh
 ENV PATH /root/torch/install/bin:$PATH
