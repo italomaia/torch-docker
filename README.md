@@ -1,4 +1,4 @@
-Simple torch docker image.
+Simple torch docker image. Repo: https://hub.docker.com/r/italomaia/torch/
 
 ## Usage
 
