@@ -35,3 +35,5 @@ RUN apt-get update -y &&\
 RUN git clone https://github.com/torch/distro.git /root/torch --recursive\
     && cd /root/torch\
     && ./install.sh
+
+ENV PATH /root/torch/install/bin:$PATH
