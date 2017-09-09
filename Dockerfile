@@ -34,4 +34,3 @@ RUN git clone https://github.com/torch/distro.git /root/torch --recursive
 ARG TORCH_LUA_VERSION
 ENV TORCH_LUA_VERSION ${TORCH_LUA_VERSION}
 RUN cd /root/torch && ./install.sh
-ENV PATH /root/torch/install/bin:$PATH
