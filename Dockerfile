@@ -1,5 +1,5 @@
 FROM debian:stretch-slim
-MAINTAINER Italo Maia <italo.maia@gmail.com>
+LABEL maintainer "Italo Maia <italo.maia@gmail.com>"
 
 RUN apt-get update -y &&\
     apt-get install -y\
